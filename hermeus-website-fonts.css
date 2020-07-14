@@ -1,0 +1,39 @@
+/* hermeus font */
+@font-face {
+    font-family: wf_18ec62f89d9a46f48a4169d8b;
+    src: url("https://static.wixstatic.com/ufonts/d797a1_18ec62f89d9a46f48a4169d8b0ea0fea/woff2/file.woff2") format("woff2"),
+    url("https://static.wixstatic.com/ufonts/d797a1_18ec62f89d9a46f48a4169d8b0ea0fea/woff/file.woff") format("woff"),
+    url("https://static.wixstatic.com/ufonts/d797a1_18ec62f89d9a46f48a4169d8b0ea0fea/ttf/file.ttf") format("ttf");
+}
+
+/* roboto bold */
+@font-face {
+font-family: wf_24e80777f7b5402ea60d2a3ad;
+src: url("https://static.wixstatic.com/ufonts/d797a1_24e80777f7b5402ea60d2a3adf5f9453/woff2/file.woff2") format("woff2"),
+url("https://static.wixstatic.com/ufonts/d797a1_24e80777f7b5402ea60d2a3adf5f9453/woff/file.woff") format("woff"),
+url("https://static.wixstatic.com/ufonts/d797a1_24e80777f7b5402ea60d2a3adf5f9453/ttf/file.ttf") format("ttf");
+}
+
+/* DM sans regular */
+@font-face {
+font-family: wf_503fe17712d748208a922a295;
+src: url("https://static.wixstatic.com/ufonts/d797a1_503fe17712d748208a922a2958cb7ec3/woff2/file.woff2") format("woff2"),
+url("https://static.wixstatic.com/ufonts/d797a1_503fe17712d748208a922a2958cb7ec3/woff/file.woff") format("woff"),
+url("https://static.wixstatic.com/ufonts/d797a1_503fe17712d748208a922a2958cb7ec3/ttf/file.ttf") format("ttf");
+}
+
+/* Roboto medium */
+@font-face {
+font-family: wf_b69657d50f894e88b822e3c74;
+src: url("https://static.wixstatic.com/ufonts/d797a1_b69657d50f894e88b822e3c74810bcf7/woff2/file.woff2") format("woff2"),
+url("https://static.wixstatic.com/ufonts/d797a1_b69657d50f894e88b822e3c74810bcf7/woff/file.woff") format("woff"),
+url("https://static.wixstatic.com/ufonts/d797a1_b69657d50f894e88b822e3c74810bcf7/ttf/file.ttf") format("ttf");
+}
+
+/* Hermeus regular */
+@font-face {
+font-family: wf_e2227ca447094c95b7ed528ff;
+src: url("https://static.wixstatic.com/ufonts/edb854_e2227ca447094c95b7ed528fffaf5116/woff2/file.woff2") format("woff2"),
+url("https://static.wixstatic.com/ufonts/edb854_e2227ca447094c95b7ed528fffaf5116/woff/file.woff") format("woff"),
+url("https://static.wixstatic.com/ufonts/edb854_e2227ca447094c95b7ed528fffaf5116/ttf/file.ttf") format("ttf");
+}
