@@ -24,3 +24,9 @@ body {
         var(--yellow-faded) var(--grid-line-width),
         transparent var(--grid-line-width));
 }
+
+h1 {
+    font-size: var(--grid-size);
+    display: flex;
+    justify-content: center;
+}
