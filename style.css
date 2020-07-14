@@ -1,6 +1,24 @@
+@font-face {
+    font-family: "Hermeus";
+    src: url("/hermeus.ttf") format("truetype");
+}
+
+:root {
+    --yellow: rgb(253, 217, 49);
+    --yellow-faded: rgba(253, 217, 49, 0.5);
+    --grid-line-width: 1px;
+    --grid-size: 40px;
+}
+
 body {
-    background-size: 40px 40px;
+    font-family: Hermeus;
+
+    background-size: var(--grid-size) var(--grid-size);
     background-image:
-      linear-gradient(to right, yellow 1px, transparent 1px),
-      linear-gradient(to bottom, grey 1px, transparent 1px);
+      linear-gradient(to right,
+        var(--yellow-faded) var(--grid-line-width),
+        transparent var(--grid-line-width)),
+      linear-gradient(to bottom,
+        var(--yellow-faded) var(--grid-line-width),
+        transparent var(--grid-line-width));
 }
