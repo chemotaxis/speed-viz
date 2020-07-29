@@ -10,6 +10,10 @@
   --yellow-faded: rgba(253, 217, 49, 0.5);
   --grid-line-width: 1px;
   --grid-size: 40px;
+
+  --circle-size: 80px;
+  --ring-width: 4px;
+  --ring-size: calc(var(--circle-size) - 2*var(--ring-width));
 }
 
 body {
@@ -27,6 +31,35 @@ body {
 
 h1 {
   font-size: var(--grid-size);
+  margin-bottom: 30vh;
+}
+
+.App {
+  min-height: 0vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.Animation {
+
+}
+
+.circle {
+  background-color: gray;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.ring {
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border-radius: 50%;
+  border-color: var(--yellow);
+  border-width: var(--ring-width);
+  border-style: solid;
+  z-index: 1;
 }
