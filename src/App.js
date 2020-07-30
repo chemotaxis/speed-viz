@@ -12,7 +12,7 @@ const slowPlaneSpeed = fastPlaneSpeed*howMuchSlower;
 
 // Measured in pixels
 const leftBound = 0;
-const rightBound = 0.6*document.documentElement.clientWidth - 40;
+const rightBound = 240;
 const altitude = 100;
 
 function Button({onClick}) {
@@ -26,49 +26,49 @@ function Button({onClick}) {
 function Animation() {
   return (
     <div className="Animation">
-      <div className="leftContainer">
-        <div className="container">
-          <div className="yellowBox"></div>
-          <div className="planeName">Mach 5</div>
-        </div>
-        <div className="container">
-          <div className="box"></div>
-          <div className="cityLabel">NY</div>
-          <motion.div className="circle"
-            animate={{
-              x: [leftBound, rightBound],
-              y: [0, -altitude, 0],
-            }}
-            transition={{
-              ease: "easeInOut",
-              flip: howMuchSlower - 1,
-              duration: fastPlaneSpeed,
-            }}
-          />
-          <div className="ring"
-            style={{
-              position: "relative",
-              right: "40px",
-            }}
-          />
-        </div>
+      <div className="row">
+        <div className="yellowBox"></div>
+        <div className="planeName">Mach 5</div>
+        <div className="animationBox"></div>
+        <div className="tripCounter">Oneway trips:</div>
       </div>
+      <div className="row">
+        <div className="box"></div>
+        <div className="cityLabel">NY</div>
+        <div className="animationBox">
+          <div className="container">
+            <div className="ring" style={{position: "absolute"}}/>
+            <motion.div className="circle"
+              style={{position:"absolute"}}
+              animate={{
+                x: [leftBound, rightBound],
+                y: [0, altitude, 0]
+              }}
+              transition={{
+                ease: "easeInOut",
+                duration: slowPlaneSpeed,
+                flip: 0,
+              }}
+            />
+            <motion.div className="circle"
+              animate={{
+                x: [leftBound, rightBound],
+                y: [0, -altitude, 0],
+              }}
+              transition={{
+                ease: "easeInOut",
+                flip: howMuchSlower - 1,
+                duration: fastPlaneSpeed,
+              }}
+            />
 
-      <div className="ring"/>
-      <motion.div className="circle"
-        style={{
-          position: "absolute",
-        }}
-        animate={{
-          x: [leftBound, rightBound],
-          y: [0, altitude, 0]
-        }}
-        transition={{
-          ease: "easeInOut",
-          duration: slowPlaneSpeed,
-          flip: 0,
-        }}
-      />
+          </div>
+          <div className="container">
+            <div className="ring"/>
+          </div>
+        </div>
+        <div className="cityLabel">Paris</div>
+      </div>
     </div>
   )
 }
