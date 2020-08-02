@@ -61,9 +61,9 @@ function Animation() {
     <div className="Animation">
       <div className="row">
         <div className="yellowBox"></div>
-        <div className="planeName">Mach 5</div>
+        <div className="planeName">Mach 5 vs. Today's Planes</div>
         <div className="animationBox"></div>
-        <div className="tripCounter">Oneway trips:</div>
+        <div className="tripCounter">Oneway trips: {trips}</div>
       </div>
       <div className="row">
         <div className="box"></div>
@@ -83,8 +83,8 @@ function Animation() {
               animate={fastControls}
               transition={{
                 ease: "easeInOut",
-                flip: howMuchSlower - 1,
                 duration: fastPlaneSpeed,
+                flip: howMuchSlower - 1,
               }}
             />
           <div ref={circleRef} className="ring"/>
