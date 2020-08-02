@@ -10,6 +10,21 @@
   --yellow-faded: rgba(253, 217, 49, 0.5);
   --grid-line-width: 1px;
   --grid-size: 40px;
+
+  --circle-size: 40px;
+  --ring-width: 4px;
+  --ring-adjust: calc(2px*1);
+  --ring-size: calc(
+      var(--ring-adjust)
+    + var(--circle-size)
+    - 2*var(--ring-width));
+
+  /* Used for yellow accent box on the left side */
+  --box-width: 40px;
+
+  --font-small: 30px;
+  --font-medium: 50px;
+  --font-large: 60px;
 }
 
 body {
@@ -26,7 +41,108 @@ body {
 }
 
 h1 {
-  font-size: var(--grid-size);
+  font-size: var(--font-large);
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
+}
+
+.App {
+  min-height: 0vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.Animation {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .Animation {
+    min-width: 70%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.animationBox {
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.planeName {
+  font-size: var(--font-small);
+  max-width: 20vw;
+}
+
+@media (max-width: 900px) {
+  .planeName {
+    max-width: 140px;
+    white-space: initial;
+  }
+}
+
+.tripCounter {
+  font-size: var(--font-small);
+  white-space: nowrap;
+}
+
+.yellowBox {
+  height: var(--font-small);
+  width: var(--box-width);
+  background-color: var(--yellow);
+}
+
+.box {
+  height: var(--font-medium);
+  width: var(--box-width);
+}
+
+.cityLabel {
+  height: 100%;
+  font-size: var(--font-medium);
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.circle {
+  background-color: rgb(63, 63, 63);
+  margin: calc(var(--ring-adjust) / 2);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.ring {
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border-radius: 50%;
+  border-color: var(--yellow);
+  border-width: var(--ring-width);
+  border-style: solid;
+  z-index: 0;
+}
+
+.button {
+  background-color: var(--yellow);
+  font-size: 40px;
+  user-select: none;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
 }
