@@ -124,7 +124,7 @@ h1 {
   width: var(--circle-size);
   height: var(--circle-size);
   border-radius: 50%;
-  z-index: 0;
+  z-index: 1;
 }
 
 .ring {
@@ -134,7 +134,7 @@ h1 {
   border-color: var(--yellow);
   border-width: var(--ring-width);
   border-style: solid;
-  z-index: 1;
+  z-index: 0;
 }
 
 .button {
