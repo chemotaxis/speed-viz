@@ -13,7 +13,11 @@
 
   --circle-size: 40px;
   --ring-width: 4px;
-  --ring-size: calc(var(--circle-size) - 2*var(--ring-width));
+  --ring-adjust: calc(2px*1);
+  --ring-size: calc(
+      var(--ring-adjust)
+    + var(--circle-size)
+    - 2*var(--ring-width));
 
   /* Used for yellow accent box on the left side */
   --box-width: 40px;
@@ -107,6 +111,7 @@ h1 {
 
 .circle {
   background-color: gray;
+  margin: calc(var(--ring-adjust) / 2);
   width: var(--circle-size);
   height: var(--circle-size);
   border-radius: 50%;
