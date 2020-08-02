@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import './App.css';
+import * as src from './static/hermeus-thumbnail.jpg';
 import { motion, useAnimation } from 'framer-motion';
 
 
