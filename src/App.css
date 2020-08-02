@@ -62,6 +62,10 @@ h1 {
   min-width: 50%;
 }
 
+@media (max-width: 1024px) {
+  .Animation {
+    min-width: 70%;
+  }
 }
 
 .row {
@@ -83,7 +87,12 @@ h1 {
   max-width: 20vw;
 }
 
-.planeName {
+@media (max-width: 900px) {
+  .planeName {
+    max-width: 140px;
+    white-space: initial;
+  }
+}
   white-space: nowrap;
 }
 
