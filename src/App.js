@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './App.css';
 import * as src from './static/hermeus-thumbnail.jpg';
 import { motion, useAnimation } from 'framer-motion';
@@ -27,10 +27,11 @@ function Animation() {
   let rightBound = 0;
   const altitude = 50;
 
-  const trips = 0;
+  const [leftCollide, setLeftCollide] = useState(leftBound);
+  const [rightCollide, setRightCollide] = useState(rightBound);
 
   const animationRef = useRef();
-  const circleRef = useRef();
+  const ringRef = useRef();
 
   const slowControls = useAnimation();
   const fastControls = useAnimation();
@@ -38,11 +39,29 @@ function Animation() {
   const slowY = [0, altitude, 0];
   const fastY = [0, -altitude, 0];
 
-  const onClick = () => {
-    rightBound = animationRef.current.offsetWidth
-      - circleRef.current.offsetWidth;
+  const [trips, setTrips] = useState(0);
+  const [cur, setCur] = useState(1);
+  const [prev, setPrev] = useState(1);
 
-    console.log(rightBound);
+  function onUpdate(latest) {
+    setCur(latest.x < leftCollide || latest.x > rightCollide? 1:0);
+
+    if (cur === 1 && prev === 0) {
+      setTrips(trips+1);
+    }
+
+    setPrev(cur);
+  }
+
+  const onClick = () => {
+    setTrips(0);
+
+    const ringDiameter = ringRef.current.offsetWidth;
+
+    rightBound = animationRef.current.offsetWidth - ringDiameter;
+
+    setLeftCollide(leftBound + ringDiameter);
+    setRightCollide(rightBound - ringDiameter);
 
     const xBounds = [leftBound, rightBound];
 
@@ -63,7 +82,7 @@ function Animation() {
         <div className="yellowBox"></div>
         <div className="planeName">Mach 5 vs. Today's Planes</div>
         <div className="animationBox"></div>
-        <div className="tripCounter">Oneway trips: {trips}</div>
+        <div className="tripCounter">One-way trips: {trips}</div>
       </div>
       <div className="row">
         <div className="box"></div>
@@ -86,8 +105,9 @@ function Animation() {
                 duration: fastPlaneSpeed,
                 flip: howMuchSlower - 1,
               }}
+              onUpdate={onUpdate}
             />
-          <div ref={circleRef} className="ring"/>
+          <div ref={ringRef} className="ring"/>
         </div>
         <div className="cityLabel">Paris</div>
       </div>
