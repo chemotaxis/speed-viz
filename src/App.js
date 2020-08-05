@@ -4,11 +4,12 @@ import * as src from './static/hermeus-thumbnail.jpg';
 import { motion, useAnimation } from 'framer-motion';
 
 
-const howMuchSlower = 5;
+const speedRatio = 5/0.85;
+const nTripsFastPlane = Math.floor(speedRatio);
 
 // Measured in seconds
-const fastPlaneSpeed = 1;
-const slowPlaneSpeed = fastPlaneSpeed*howMuchSlower;
+const fastPlaneTripDuration = 1;
+const slowPlaneTripDuration = fastPlaneTripDuration*speedRatio;
 
 
 function Button({onClick}) {
@@ -94,7 +95,7 @@ function Animation() {
               animate={slowControls}
               transition={{
                 ease: "easeInOut",
-                duration: slowPlaneSpeed,
+                duration: slowPlaneTripDuration,
                 flip: 0,
               }}
             />
@@ -102,8 +103,8 @@ function Animation() {
               animate={fastControls}
               transition={{
                 ease: "easeInOut",
-                duration: fastPlaneSpeed,
-                flip: howMuchSlower - 1,
+                duration: fastPlaneTripDuration,
+                flip: nTripsFastPlane - 1,
               }}
               onUpdate={onUpdate}
             />
