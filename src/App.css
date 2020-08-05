@@ -48,7 +48,7 @@ h1 {
 }
 
 .App {
-  min-height: 0vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,14 +100,14 @@ h1 {
 }
 
 .yellowBox {
-  height: var(--font-small);
   width: var(--box-width);
+  height: 100%;
   background-color: var(--yellow);
 }
 
 .box {
-  height: var(--font-medium);
   width: var(--box-width);
+  height: 100%;
 }
 
 .cityLabel {
