@@ -11,14 +11,6 @@
   --grid-line-width: 1px;
   --grid-size: 40px;
 
-  --circle-size: 40px;
-  --ring-width: 4px;
-  --ring-adjust: calc(2px*1);
-  --ring-size: calc(
-      var(--ring-adjust)
-    + var(--circle-size)
-    - 2*var(--ring-width));
-
   /* Used mainly for yellow accent box on the left side */
   --box-width: 40px;
 
@@ -38,6 +30,14 @@
   --font-large: calc(40px
       + 30 * ((100vw - 320px)/var(--diff-display-width))
     );
+
+  --circle-size: var(--font-medium);
+  --ring-width: 4px;
+  --ring-adjust: calc(2px*1);
+  --ring-size: calc(
+      var(--ring-adjust)
+    + var(--circle-size)
+    - 2*var(--ring-width));
 }
 
 body {
