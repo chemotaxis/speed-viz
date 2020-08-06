@@ -22,9 +22,22 @@
   /* Used for yellow accent box on the left side */
   --box-width: 40px;
 
-  --font-small: 30px;
-  --font-medium: 50px;
-  --font-large: 60px;
+  /* Represents pixel values but need to be numbers for calc() to work */
+  --max-display-width: 2880;
+  --min-display-width: 320;
+  --diff-display-width: calc(
+      var(--max-display-width) - var(--min-display-width)
+    );
+
+  --font-small: calc(17px
+      + 20 * ((100vw - 320px)/var(--diff-display-width))
+    );
+  --font-medium: calc(30px
+    + 50 * ((100vw - 320px)/var(--diff-display-width))
+  );
+  --font-large: calc(40px
+      + 30 * ((100vw - 320px)/var(--diff-display-width))
+    );
 }
 
 body {
