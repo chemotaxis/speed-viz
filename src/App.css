@@ -90,6 +90,14 @@ h1 {
   margin-bottom: 5px;
 }
 
+.center {
+  justify-content: center;
+}
+
+.sansSerif {
+  font-family: sans-serif;
+}
+
 .animationBox {
   flex-grow: 1;
 
