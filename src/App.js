@@ -81,7 +81,7 @@ function Animation() {
     <div className="Animation">
       <div className="row">
         <div className="yellowBox"></div>
-        <div className="planeName">Mach 5 vs. Today's Planes</div>
+        <div className="planeName">Mach 5 vs. <br/>Today's Planes</div>
         <div className="animationBox"></div>
         <div className="tripCounter">One-way trips: {trips}</div>
       </div>

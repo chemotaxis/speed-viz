@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Hermeus";
-  src:
-  url("./static/hermeus.ttf") format("truetype"),
-  url("https://static.wixstatic.com/ufonts/d797a1_18ec62f89d9a46f48a4169d8b0ea0fea/woff2/file.woff2") format("woff2");
+  src: url("./static/hermeus.woff2") format("woff2");
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
 
 :root {
   --yellow: rgb(253, 217, 49);
@@ -11,24 +11,37 @@
   --grid-line-width: 1px;
   --grid-size: 40px;
 
-  --circle-size: 40px;
+  /* Used mainly for yellow accent box on the left side */
+  --box-width: 40px;
+
+  /* Represents pixel values but need to be numbers for calc() to work */
+  --max-display-width: 2880;
+  --min-display-width: 320;
+  --diff-display-width: calc(
+      var(--max-display-width) - var(--min-display-width)
+    );
+
+  --font-small: calc(17px
+      + 20 * ((100vw - 320px)/var(--diff-display-width))
+    );
+  --font-medium: calc(30px
+    + 50 * ((100vw - 320px)/var(--diff-display-width))
+  );
+  --font-large: calc(40px
+      + 30 * ((100vw - 320px)/var(--diff-display-width))
+    );
+
+  --circle-size: var(--font-medium);
   --ring-width: 4px;
   --ring-adjust: calc(2px*1);
   --ring-size: calc(
       var(--ring-adjust)
     + var(--circle-size)
     - 2*var(--ring-width));
-
-  /* Used for yellow accent box on the left side */
-  --box-width: 40px;
-
-  --font-small: 30px;
-  --font-medium: 50px;
-  --font-large: 60px;
 }
 
 body {
-  font-family: Hermeus;
+  font-family: "Hermeus", "Contrail One", sans-serif;
 
   background-size: var(--grid-size) var(--grid-size);
   background-image:
@@ -44,27 +57,26 @@ h1 {
   font-size: var(--font-large);
   text-align: center;
   margin-top: 10vh;
-  margin-bottom: 20vh;
+  margin-bottom: 15vh;
 }
 
 .App {
-  min-height: 0vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .Animation {
   display: flex;
   flex-direction: column;
 
-  min-width: 50%;
+  min-width: 60%;
 }
 
 @media (max-width: 1024px) {
   .Animation {
-    min-width: 70%;
+    min-width: 95%;
   }
 }
 
@@ -73,6 +85,8 @@ h1 {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .animationBox {
@@ -84,37 +98,28 @@ h1 {
 
 .planeName {
   font-size: var(--font-small);
-  max-width: 20vw;
-}
-
-@media (max-width: 900px) {
-  .planeName {
-    max-width: 140px;
-    white-space: initial;
-  }
 }
 
 .tripCounter {
   font-size: var(--font-small);
+  /* Force contents to be one line. */
   white-space: nowrap;
 }
 
 .yellowBox {
-  height: var(--font-small);
-  width: var(--box-width);
+  height: 100%;
+  width: 5vw;
   background-color: var(--yellow);
 }
 
 .box {
-  height: var(--font-medium);
-  width: var(--box-width);
+  height: 100%;
+  width: 5vw;
 }
 
 .cityLabel {
   height: 100%;
   font-size: var(--font-medium);
-  margin: 0px;
-  padding: 0px;
 }
 
 
