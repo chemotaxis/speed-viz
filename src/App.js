@@ -40,9 +40,10 @@ function Animation() {
   const slowY = [0, altitude, 0];
   const fastY = [0, -altitude, 0];
 
-  const [trips, setTrips] = useState(0);
-  const [cur, setCur] = useState(1);
-  const [prev, setPrev] = useState(1);
+  const [curInit, prevInit, tripsInit] = [1, 1, 0];
+  const [trips, setTrips] = useState(tripsInit);
+  const [cur, setCur] = useState(curInit);
+  const [prev, setPrev] = useState(prevInit);
 
   function onUpdate(latest) {
     setCur(latest.x < leftCollide || latest.x > rightCollide? 1:0);
@@ -55,7 +56,9 @@ function Animation() {
   }
 
   const onClick = () => {
-    setTrips(0);
+    setCur(curInit);
+    setPrev(prevInit);
+    setTrips(tripsInit);
 
     const ringDiameter = ringRef.current.offsetWidth;
 
