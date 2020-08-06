@@ -116,8 +116,15 @@ function Animation() {
         <div className="cityLabel">Paris</div>
       </div>
       <div style={{ height: "20vh" }}/>
-      <div className="row" style={{justifyContent: "center"}}>
+      <div className="row center">
         <Button onClick={onClick}/>
+      </div>
+      <div style={{ height: "15vh" }}/>
+      <div className="row center sansSerif">
+        <a href="https://www.instagram.com/p/B_iZBUfJpw-/"
+        target="_blank" rel="noopener noreferrer">
+          Link to original visualization
+        </a>
       </div>
     </div>
   )

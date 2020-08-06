@@ -4,6 +4,10 @@ The purpose of this project is to reproduce this post:
 
 <https://www.instagram.com/p/B_iZBUfJpw-/>
 
+My visualization is running here:
+
+<https://chemotaxis.github.io/speed-viz/>
+
 ## Development
 
 This project was bootstrapped with [Create React

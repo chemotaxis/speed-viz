@@ -72,6 +72,7 @@ h1 {
   flex-direction: column;
 
   min-width: 60%;
+  height: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -87,6 +88,14 @@ h1 {
   align-items: center;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.center {
+  justify-content: center;
+}
+
+.sansSerif {
+  font-family: sans-serif;
 }
 
 .animationBox {
