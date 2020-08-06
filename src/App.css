@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Hermeus";
-  src:
-  url("./static/hermeus.ttf") format("truetype"),
-  url("https://static.wixstatic.com/ufonts/d797a1_18ec62f89d9a46f48a4169d8b0ea0fea/woff2/file.woff2") format("woff2");
+  src: url("./static/hermeus.woff2") format("woff2");
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
 
 :root {
   --yellow: rgb(253, 217, 49);
@@ -28,7 +28,7 @@
 }
 
 body {
-  font-family: Hermeus;
+  font-family: "Hermeus", "Contrail One", sans-serif;
 
   background-size: var(--grid-size) var(--grid-size);
   background-image:
