@@ -119,13 +119,6 @@ function Animation() {
       <div className="row center">
         <Button onClick={onClick}/>
       </div>
-      <div style={{ height: "15vh" }}/>
-      <div className="row center sansSerif">
-        <a href="https://www.instagram.com/p/B_iZBUfJpw-/"
-        target="_blank" rel="noopener noreferrer">
-          Link to original visualization
-        </a>
-      </div>
     </div>
   )
 }
@@ -134,6 +127,13 @@ function App() {
     <div className="App">
       <h1>Speed Visualization</h1>
       <Animation/>
+      <div className="row center sansSerif">
+        <a href="https://www.instagram.com/p/B_iZBUfJpw-/"
+        target="_blank" rel="noopener noreferrer">
+          Link to original visualization
+        </a>
+      </div>
+      <div style={{height: "60px"}}/>
     </div>
   );
 }
