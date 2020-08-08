@@ -13,12 +13,13 @@ const slowPlaneTripDuration = fastPlaneTripDuration*speedRatio;
 
 
 function Button({onClick}) {
+
   return (
-    <motion.div onClick={onClick} className="button"
-      whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+    <motion.button autoFocus type="button" onClick={onClick}
+    className="button" whileHover={{ scale: 1.1 }} whileTap={{scale: 0.9}}
     >
       Run
-    </motion.div>
+    </motion.button>
   )
 }
 
