@@ -117,13 +117,13 @@ h1 {
 
 .yellowBox {
   height: 100%;
-  width: 5vw;
+  width: 1vw;
   background-color: var(--yellow);
 }
 
 .box {
   height: 100%;
-  width: 5vw;
+  width: 1vw;
 }
 
 .cityLabel {
