@@ -59,7 +59,7 @@ h1 {
 }
 
 .App {
-  height: 90vh;
+  height: 85vh;
 
   display: flex;
   flex-direction: column;
