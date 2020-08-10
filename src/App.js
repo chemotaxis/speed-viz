@@ -132,9 +132,8 @@ function Spacer({height}) {
 function App() {
   return (
     <div className="App">
-      <Spacer height="7vh"/>
       <h1>Speed Visualization</h1>
-      <Spacer height="10vh"/>
+      <Spacer height="20vh"/>
       <Animation/>
       <Spacer height="5vh"/>
       <div className="row center sansSerif">

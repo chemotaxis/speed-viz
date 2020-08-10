@@ -59,7 +59,9 @@ h1 {
 }
 
 .App {
-  height: 85vh;
+  /* Decreasing height from 100vh to 80vh to get rid of vertical overflow on
+  mobile browser */
+  height: 80vh;
 
   display: flex;
   flex-direction: column;
