@@ -115,25 +115,33 @@ function Animation() {
         </div>
         <div className="cityLabel">Paris</div>
       </div>
-      <div style={{ height: "20vh" }}/>
+      <Spacer height="20vh"/>
       <div className="row center">
         <Button onClick={onClick}/>
       </div>
-      <div style={{ height: "15vh" }}/>
+    </div>
+  )
+}
+
+function Spacer({height}) {
+  return (
+    <div style={{height: height}}/>
+  )
+}
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Speed Visualization</h1>
+      <Spacer height="20vh"/>
+      <Animation/>
+      <Spacer height="5vh"/>
       <div className="row center sansSerif">
         <a href="https://www.instagram.com/p/B_iZBUfJpw-/"
         target="_blank" rel="noopener noreferrer">
           Link to original visualization
         </a>
       </div>
-    </div>
-  )
-}
-function App() {
-  return (
-    <div className="App">
-      <h1>Speed Visualization</h1>
-      <Animation/>
     </div>
   );
 }
