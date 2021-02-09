@@ -138,7 +138,8 @@ function App() {
       <Animation/>
       <Spacer height="5vh"/>
       <div className="row center sansSerif">
-        <a href="https://www.instagram.com/p/B_iZBUfJpw-/"
+        {/* If changing href, change link in ~/readme.md */}
+        <a href="https://t.co/17lVtXui8r"
         target="_blank" rel="noopener noreferrer">
           Link to original visualization
         </a>
